@@ -1,0 +1,103 @@
+.kicker {
+  margin: 0 0 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--color-iron);
+}
+
+/* --- Featured scents --- */
+.featured { background: var(--color-midnight); }
+.featuredHeader {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: clamp(1rem, 3vw, 2rem) clamp(1.25rem, 4vw, 3.5rem) 0;
+}
+.featuredTitle {
+  margin: 0;
+  font-family: var(--font-headline);
+  font-weight: var(--weight-display);
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  line-height: 0.95;
+  text-transform: uppercase;
+  color: var(--color-white);
+}
+
+/* --- Duo Bundle promo --- */
+.bundle {
+  background: var(--color-midnight);
+  border-top: 1px solid var(--color-hairline);
+  border-bottom: 1px solid var(--color-hairline);
+}
+.bundleInner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: clamp(2.5rem, 6vw, 4.5rem) clamp(1.25rem, 4vw, 3.5rem);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  flex-wrap: wrap;
+}
+.bundleCopy { max-width: 34rem; }
+.bundleTitle {
+  margin: 0 0 0.75rem;
+  font-family: var(--font-headline);
+  font-weight: var(--weight-display);
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  line-height: 1;
+  text-transform: uppercase;
+  color: var(--color-white);
+}
+.bundleBody {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--color-iron);
+}
+.bundleCta { flex-shrink: 0; }
+
+/* --- Newsletter --- */
+.newsletter {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: clamp(2.5rem, 6vw, 4.5rem) clamp(1.25rem, 4vw, 3.5rem);
+}
+.newsletterTitle {
+  margin: 0 0 1.5rem;
+  font-family: var(--font-headline);
+  font-weight: var(--weight-display);
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  line-height: 1;
+  text-transform: uppercase;
+  color: var(--color-white);
+}
+.newsletterForm { max-width: 26rem; }
+
+/* --- Smell Test band --- */
+.smellTestBand {
+  border-top: 1px solid var(--color-hairline);
+  padding: clamp(2rem, 5vw, 3rem) clamp(1.25rem, 4vw, 3.5rem);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+.smellTestCopy {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  color: var(--color-iron);
+}
+.smellTestCta {
+  font-family: var(--font-headline);
+  font-weight: var(--weight-headline);
+  font-size: 1.15rem;
+  text-transform: uppercase;
+  color: var(--color-white);
+  border-bottom: 2px solid var(--color-tag-happy-ending);
+  padding-bottom: 3px;
+}

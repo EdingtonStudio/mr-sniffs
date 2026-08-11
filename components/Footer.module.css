@@ -1,0 +1,100 @@
+.footer {
+  position: relative;
+  background: var(--color-midnight);
+  border-top: 1px solid var(--color-hairline);
+  overflow: hidden;
+}
+.content {
+  position: relative;
+  z-index: 1;
+}
+.inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 clamp(1.25rem, 4vw, 3.5rem);
+}
+
+.top {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr 1fr;
+  gap: clamp(2rem, 5vw, 3rem);
+  padding: clamp(2.5rem, 6vw, 4.5rem) 0 clamp(2rem, 5vw, 3rem);
+}
+
+.brand { max-width: 20rem; }
+.tagline {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--color-iron);
+}
+
+/* Two labeled columns — Shop / Support — instead of one long stacked list */
+.navGroups {
+  display: flex;
+  gap: clamp(2rem, 4vw, 3.5rem);
+}
+.navGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.navGroupLabel {
+  margin: 0 0 0.25rem;
+  font-size: 0.72rem;
+  letter-spacing: var(--tracking-label);
+  color: var(--color-iron);
+}
+.navGroup a { color: var(--color-white); opacity: 0.75; }
+.navGroup a:hover { opacity: 1; }
+
+.newsletter { justify-self: start; }
+
+.bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.5rem 0 clamp(1.5rem, 3vw, 2.5rem);
+  border-top: 1px solid var(--color-hairline);
+}
+
+/* Full-bleed ghost wordmark — sits as a backdrop behind ALL footer content (nav, newsletter,
+   copyright), not a separate band. Darkened well below the nav-link/copy text so it stays a
+   backdrop, not a contrast fight. Width uses vw only (no px floor) so it scales cleanly at
+   every viewport size. */
+.wordmarkWrap {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.wordmark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 130vw;
+  max-width: none;
+  transform: translate(-50%, -50%);
+  filter: brightness(0.14);
+  user-select: none;
+}
+.social { color: var(--color-white); opacity: 0.75; }
+.social:hover { opacity: 1; }
+.copyright {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-iron);
+}
+
+@media (max-width: 720px) {
+  .top { grid-template-columns: 1fr; }
+  .navGroups { gap: 2.5rem; }
+  .bottom { flex-direction: column-reverse; align-items: flex-start; }
+}

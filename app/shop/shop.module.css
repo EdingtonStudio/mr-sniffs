@@ -1,0 +1,27 @@
+.shop {
+  background: var(--color-midnight);
+  min-height: 70vh;
+}
+.header {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: clamp(2.5rem, 6vw, 5rem) clamp(1.25rem, 4vw, 3.5rem) 0;
+}
+.kicker {
+  margin: 0 0 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--color-iron);
+}
+.title {
+  margin: 0;
+  font-family: var(--font-headline);
+  font-weight: var(--weight-display);
+  font-size: clamp(2.75rem, 8vw, 6rem);
+  line-height: 0.92;
+  letter-spacing: var(--tracking-display);
+  text-transform: uppercase;
+  color: var(--color-white);
+}

@@ -1,0 +1,87 @@
+.pdp {
+  background: var(--color-midnight);
+}
+
+.top {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: start;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: clamp(2.5rem, 6vw, 5rem) clamp(1.25rem, 4vw, 3.5rem);
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr 0.7fr;
+  gap: clamp(1rem, 2.5vw, 1.75rem);
+  align-items: start;
+}
+.frame,
+.frameOffset {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: #17191b;
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--radius-media);
+}
+/* intentional asymmetry — second gallery frame drops off-axis, not aligned with the first */
+.frameOffset {
+  margin-top: clamp(2rem, 6vw, 4rem);
+}
+.img { object-fit: cover; }
+
+@media (max-width: 900px) {
+  .top { grid-template-columns: 1fr; }
+  .gallery { grid-template-columns: 1fr 1fr; }
+  .frameOffset { margin-top: 2.5rem; }
+}
+
+/* --- The Other One --- */
+.otherOne {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 clamp(1.25rem, 4vw, 3.5rem) clamp(3rem, 7vw, 6rem);
+  border-top: 1px solid var(--color-hairline);
+  padding-top: clamp(2rem, 5vw, 3.5rem);
+}
+.otherKicker {
+  margin: 0 0 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--color-iron);
+}
+.otherCard {
+  display: flex;
+  align-items: baseline;
+  gap: clamp(1rem, 3vw, 2rem);
+  color: var(--color-white);
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid transparent;
+  transition: border-color 150ms ease;
+}
+.otherCard:hover { border-bottom-color: var(--color-accent, var(--color-iron)); }
+.otherName {
+  font-family: var(--font-headline);
+  font-weight: var(--weight-display);
+  font-size: clamp(2.25rem, 6vw, 4rem);
+  text-transform: uppercase;
+  line-height: 1;
+}
+.otherNotes {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--color-iron);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+}
+.otherArrow {
+  margin-left: auto;
+  font-family: var(--font-headline);
+  font-size: 1.75rem;
+  color: var(--color-accent, var(--color-iron));
+}

@@ -1,0 +1,58 @@
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.1rem;
+  max-width: 34rem;
+}
+.nameTag {
+  margin-bottom: 0.25rem;
+}
+.notes {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  letter-spacing: var(--tracking-label);
+  color: var(--color-iron);
+  text-transform: uppercase;
+}
+.moods {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 0.25rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+.mood {
+  padding: 0.4em 0.85em;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--color-white);
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--radius-sticker);
+}
+.burnTime {
+  margin: 0.25rem 0 0;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--color-white);
+}
+.burnTimeLabel {
+  color: var(--color-iron);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-label);
+  margin-right: 0.5em;
+}
+.price {
+  margin: 0.5rem 0 0;
+  font-family: var(--font-headline);
+  font-weight: var(--weight-headline);
+  font-size: 1.75rem;
+  color: var(--color-white);
+}
+.cta {
+  margin-top: 0.5rem;
+}

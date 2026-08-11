@@ -1,0 +1,89 @@
+/* ==========================================================================
+   MR. SNIFF'S — GLOBAL DESIGN TOKENS
+   The foundation every component inherits from. Imported once via globals.css.
+
+   FONTS: the families --font-headline / --font-mono / --font-body are provided
+   by next/font/google in app/layout.tsx (optimized, self-hosted, fallbacks
+   baked in). Do NOT redefine them here — reference them. Big Shoulders = loud
+   (headlines/CTAs), Space Mono = utility (labels/notes), Inter = body.
+   No italics, ever.
+   ========================================================================== */
+
+:root {
+  /* --- STRUCTURAL COLOR (base system — never competes with flavor accents) --- */
+  --color-midnight: #0F1214;
+  --color-iron:     #9A9EA0;
+  --color-white:    #FFFFFF;
+
+  /* Semantic roles (dark-first site) */
+  --color-bg:       var(--color-midnight);
+  --color-text:     var(--color-white);
+  --color-muted:    var(--color-iron);
+  --color-hairline: rgba(154, 158, 160, 0.24); /* iron @ low alpha — dividers/borders */
+
+  /* --- FLAVOR TAG ACCENTS — LAUNCH (accent-only: borders/underlines/tags,
+         never large-area backgrounds) --- */
+  --color-tag-happy-ending: #8FAD45; /* green — Tonka Bean + White Musk */
+  --color-tag-burn-notice:  #E06666; /* coral — Sandalwood + Black Pepper */
+
+  /* Active flavor accent — PDP/card sets this per-scent; UI reads --color-accent.
+     e.g. <article style="--color-accent: var(--color-tag-burn-notice)"> */
+  --color-accent: var(--color-iron);
+
+  /* Full scent line — phase 2 (brand-guide values, not shipping at launch):
+     morning-driftwood #6FBEBD · that-what-she-said #D23E88 · pot-pourri #B8CC5F
+     inhale-to-the-chief #8FAD45 · seaman #8A2540 · golden-shower #D9C73B
+     (Happy Ending adopted the olive #8FAD45 for launch contrast vs Burn Notice.) */
+
+  /* --- TYPE WEIGHTS --- */
+  --weight-display:         800; /* hero/display headlines */
+  --weight-headline:        800; /* loud by default (CTAs, buttons) */
+  --weight-headline-max:    900;
+  --weight-mono:            400;
+  --weight-mono-bold:       700;
+  --weight-body:            400;
+  --weight-body-medium:     500;
+  --weight-body-semibold:   600;
+
+  /* --- TYPE SCALE (root 16px; display sizes fluid via clamp) --- */
+  --type-display:   clamp(4rem, 12vw, 11rem);    /* hero — "COME GET A WHIFF" */
+  --type-h1:        clamp(2.75rem, 6vw, 5rem);
+  --type-h2:        clamp(2rem, 4vw, 3.25rem);
+  --type-h3:        clamp(1.5rem, 2.5vw, 2.125rem);
+  --type-h4:        1.25rem;     /* 20px */
+  --type-body-lg:   1.125rem;    /* 18px */
+  --type-body:      1rem;        /* 16px */
+  --type-body-sm:   0.875rem;    /* 14px */
+  --type-label:     0.75rem;     /* 12px — mono labels/tags */
+
+  /* Line heights */
+  --leading-display: 0.92;       /* tight, stacked display type */
+  --leading-tight:   1.05;
+  --leading-snug:    1.25;
+  --leading-body:    1.55;
+
+  /* Letter spacing */
+  --tracking-display: 0.01em;    /* "slightly loose" per brand guide */
+  --tracking-label:   0.12em;    /* mono labels — wide, technical */
+  --tracking-tight:  -0.01em;
+  --tracking-normal:  0;
+
+  /* --- SPACING SCALE (4px base; t-shirt sizes) --- */
+  --space-3xs: 0.25rem;  /* 4   */
+  --space-2xs: 0.5rem;   /* 8   */
+  --space-xs:  0.75rem;  /* 12  */
+  --space-sm:  1rem;     /* 16  */
+  --space-md:  1.5rem;   /* 24  */
+  --space-lg:  2.5rem;   /* 40  */
+  --space-xl:  4rem;     /* 64  */
+  --space-2xl: 6rem;     /* 96  */
+  --space-3xl: 9rem;     /* 144 */
+  --space-section: clamp(4rem, 8vw, 9rem); /* vertical rhythm between sections */
+
+  /* --- LAYOUT --- */
+  --max-width:      1280px;  /* page container */
+  --measure:        65ch;    /* readable body width */
+  --radius:         0;       /* hard edges — no soft rounding by default */
+  --radius-sticker: 2px;     /* flavor-tag sticker corners */
+  --radius-media:   8px;     /* photos / media frames */
+}

@@ -1,0 +1,30 @@
+/* The packaging-sticker label. Reused on cards, PDP, and Smell Test answers. */
+.tag {
+  display: inline-block;
+  font-family: var(--font-headline);
+  font-weight: var(--weight-headline);
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  line-height: 1;
+  border-radius: var(--radius-sticker);
+  white-space: nowrap;
+}
+
+/* Solid — sticker/packaging label (product cards, PDP, cart) */
+.solid {
+  color: var(--color-midnight);
+  background: var(--tag-color, var(--color-iron));
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.28);
+}
+
+/* Outline — ghost/editorial mark, same energy as the Hero's stroked numeral */
+.outline {
+  color: var(--tag-color, var(--color-white));
+  background: transparent;
+  border: 1.5px solid var(--tag-color, var(--color-white));
+}
+
+.sm { padding: 6px 10px; font-size: 0.85rem; }
+.md { padding: 9px 14px; font-size: 1.15rem; }
+.lg { padding: 12px 18px; font-size: 1.6rem; }
+.rotate { transform: rotate(-2.5deg); }

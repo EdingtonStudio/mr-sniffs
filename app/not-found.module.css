@@ -1,0 +1,51 @@
+.page {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 1.25rem;
+  padding: clamp(3rem, 8vw, 6rem) clamp(1.25rem, 4vw, 3.5rem);
+  background: var(--color-midnight);
+}
+.mascot {
+  width: 96px;
+  height: auto;
+  animation: mascotShrug 3.4s ease-in-out infinite;
+}
+@keyframes mascotShrug {
+  0%, 100% { transform: rotate(-5deg) translateY(0); }
+  50%      { transform: rotate(4deg) translateY(-8px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mascot { animation: none; }
+}
+.headline {
+  margin: 0;
+  font-family: var(--font-headline);
+  font-weight: var(--weight-display);
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  line-height: 1.02;
+  text-transform: uppercase;
+  color: var(--color-white);
+  max-width: 20ch;
+}
+.copy {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--color-iron);
+  max-width: 36ch;
+}
+.cta {
+  margin-top: 0.5rem;
+  font-family: var(--font-headline);
+  font-weight: var(--weight-headline);
+  font-size: 1.15rem;
+  text-transform: uppercase;
+  color: var(--color-midnight);
+  background: var(--color-white);
+  padding: 0.7em 1.4em;
+  transition: transform 150ms ease;
+}
+.cta:hover { transform: translateY(-2px); }

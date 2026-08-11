@@ -1,0 +1,45 @@
+.page {
+  background: var(--color-midnight);
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: clamp(2.5rem, 6vw, 5rem) clamp(1.25rem, 4vw, 3.5rem) clamp(4rem, 8vw, 6rem);
+}
+.kicker {
+  margin: 0 0 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--color-iron);
+}
+.title {
+  margin: 0 0 1.25rem;
+  font-family: var(--font-headline);
+  font-weight: var(--weight-display);
+  font-size: clamp(2.25rem, 6vw, 3.5rem);
+  text-transform: uppercase;
+  color: var(--color-white);
+}
+.copy {
+  margin: 0 0 2rem;
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  color: var(--color-iron);
+  max-width: 48ch;
+}
+.cta {
+  display: inline-block;
+  font-family: var(--font-headline);
+  font-weight: var(--weight-headline);
+  font-size: 1.75rem;
+  text-transform: uppercase;
+  color: var(--color-white);
+  border-bottom: 2px solid var(--color-tag-burn-notice);
+  padding-bottom: 4px;
+}
+.note {
+  margin: 1.5rem 0 0;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--color-iron);
+}
