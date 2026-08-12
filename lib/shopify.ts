@@ -49,6 +49,12 @@ export async function shopifyFetch<TData, TVariables = Record<string, unknown>>(
   revalidate = 60,
   cache,
 }: ShopifyFetchParams<TVariables>): Promise<TData> {
+  // Local-dev fixtures for sandboxes without egress to Shopify. Never set in prod.
+  if (process.env.NEXT_PUBLIC_SHOPIFY_MOCK === '1') {
+    const { mockShopifyFetch } = await import('./mock-shopify');
+    return mockShopifyFetch<TData>(query, variables);
+  }
+
   if (!endpoint || !SHOPIFY_STOREFRONT_TOKEN) {
     throw new ShopifyError(
       'Missing Shopify env vars. Set NEXT_PUBLIC_SHOPIFY_STORE_DOMAIN and ' +

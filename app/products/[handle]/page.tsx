@@ -33,10 +33,7 @@ function galleryFor(product: Product): { url: string; alt: string }[] {
   if (product.images.length) {
     return product.images.map((img) => ({ url: img.url, alt: img.altText ?? product.title }));
   }
-  return [
-    { url: `/photos/card-${product.handle}.jpg`, alt: `${product.title} incense, dramatic shot` },
-    { url: `/brand/tag-${product.handle}.png`, alt: `${product.title} packaging tag` },
-  ];
+  return [{ url: '/photos/hero-burn-notice.jpg', alt: `${product.title} incense, dramatic shot` }];
 }
 
 export async function generateMetadata({

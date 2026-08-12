@@ -1,41 +1,13 @@
-.kicker {
-  margin: 0 0 0.75rem;
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  letter-spacing: var(--tracking-label);
-  text-transform: uppercase;
-  color: var(--color-iron);
-}
-
-/* --- Featured scents --- */
-.featured { background: var(--color-midnight); }
-.featuredHeader {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: clamp(1rem, 3vw, 2rem) clamp(1.25rem, 4vw, 3.5rem) 0;
-}
-.featuredTitle {
-  margin: 0;
-  font-family: var(--font-headline);
-  font-weight: var(--weight-display);
-  font-size: clamp(2.5rem, 7vw, 5rem);
-  line-height: 0.95;
-  text-transform: uppercase;
-  color: var(--color-white);
-}
-
-/* --- Duo Bundle promo --- */
-.bundle {
+/* Homepage below the Hero — the editorial index of numbered rows. */
+.index {
   background: var(--color-midnight);
-  border-top: 1px solid var(--color-hairline);
-  border-bottom: 1px solid var(--color-hairline);
+  padding-bottom: var(--space-section);
 }
+
+/* --- 02/ The Duo Bundle --- */
 .bundleInner {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: clamp(2.5rem, 6vw, 4.5rem) clamp(1.25rem, 4vw, 3.5rem);
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: space-between;
   gap: clamp(1.5rem, 4vw, 3rem);
   flex-wrap: wrap;
@@ -45,7 +17,7 @@
   margin: 0 0 0.75rem;
   font-family: var(--font-headline);
   font-weight: var(--weight-display);
-  font-size: clamp(2rem, 5vw, 3.25rem);
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
   line-height: 1;
   text-transform: uppercase;
   color: var(--color-white);
@@ -57,40 +29,19 @@
 }
 .bundleCta { flex-shrink: 0; }
 
-/* --- Newsletter --- */
-.newsletter {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: clamp(2.5rem, 6vw, 4.5rem) clamp(1.25rem, 4vw, 3.5rem);
-}
-.newsletterTitle {
-  margin: 0 0 1.5rem;
-  font-family: var(--font-headline);
-  font-weight: var(--weight-display);
-  font-size: clamp(1.75rem, 4vw, 2.75rem);
-  line-height: 1;
-  text-transform: uppercase;
-  color: var(--color-white);
-}
-.newsletterForm { max-width: 26rem; }
-
-/* --- Smell Test band --- */
-.smellTestBand {
-  border-top: 1px solid var(--color-hairline);
-  padding: clamp(2rem, 5vw, 3rem) clamp(1.25rem, 4vw, 3.5rem);
+/* --- 03/ The Smell Test --- */
+.smellTestInner {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   justify-content: space-between;
-  gap: 1rem;
+  gap: clamp(1.5rem, 4vw, 3rem);
   flex-wrap: wrap;
-  max-width: var(--max-width);
-  margin: 0 auto;
 }
 .smellTestCopy {
   margin: 0;
-  font-family: var(--font-mono);
-  font-size: 0.95rem;
+  font-family: var(--font-body);
   color: var(--color-iron);
+  max-width: 44ch;
 }
 .smellTestCta {
   font-family: var(--font-headline);
@@ -98,6 +49,23 @@
   font-size: 1.15rem;
   text-transform: uppercase;
   color: var(--color-white);
-  border-bottom: 2px solid var(--color-tag-happy-ending);
+  border-bottom: 2px solid var(--color-tag-burn-notice);
   padding-bottom: 3px;
+  transition: color 150ms ease;
 }
+.smellTestCta:hover { color: var(--color-tag-burn-notice); }
+
+/* --- 04/ Newsletter --- */
+.newsletterInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  flex-wrap: wrap;
+}
+.newsletterCopy {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--color-iron);
+}
+.newsletterForm { flex: 1 1 20rem; max-width: 26rem; }

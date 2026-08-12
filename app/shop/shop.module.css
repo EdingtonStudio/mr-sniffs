@@ -2,6 +2,11 @@
   background: var(--color-midnight);
   min-height: 70vh;
 }
+.gridWrap {
+  padding: 0 clamp(1.25rem, 4vw, 3.5rem) clamp(2rem, 5vw, 4rem);
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
 .header {
   max-width: var(--max-width);
   margin: 0 auto;

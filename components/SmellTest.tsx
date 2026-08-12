@@ -45,6 +45,8 @@ const QUESTIONS: Question[] = [
   },
 ];
 
+const ANSWER_KEYS = ['A/', 'B/'];
+
 export default function SmellTest() {
   const [products, setProducts] = useState<Record<string, Product>>({});
   const [step, setStep] = useState(0);
@@ -87,13 +89,12 @@ export default function SmellTest() {
   if (isDone) {
     return (
       <div className={styles.result}>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/brand/seal-ember.png" alt="" aria-hidden="true" className={styles.stamp} />
         <p className={styles.resultKicker}>Your Whiff Match Is</p>
         <FlavorTag
           label={matched?.title ?? '…'}
           color={matched?.scent.flavorColor ?? undefined}
           size="lg"
+          rotate={false}
           className={styles.resultTag}
         />
         {matched?.scent.notePairing ? <p className={styles.resultNotes}>{matched.scent.notePairing}</p> : null}
@@ -115,27 +116,32 @@ export default function SmellTest() {
 
   return (
     <div className={styles.quiz}>
-      <p className={styles.progress}>
-        Q{step + 1} / {QUESTIONS.length}
-      </p>
-      <h2 className={styles.prompt}>{question.prompt}</h2>
-      <div className={styles.answers}>
-        {question.answers.map((answer) => (
-          <button
-            key={answer.label}
-            type="button"
-            className={styles.answerBtn}
-            onClick={() => pick(answer.scent)}
-          >
-            <FlavorTag
-              label={answer.label}
-              rotate={false}
-              size="lg"
-              variant="outline"
-              className={styles.answerTag}
-            />
-          </button>
-        ))}
+      <header className={styles.head}>
+        <p className={styles.progress}>
+          <span className={styles.progressLabel}>The Smell Test</span>
+          <span className={styles.progressCount}>
+            Q{step + 1} — {QUESTIONS.length}
+          </span>
+        </p>
+        <div className={styles.track} aria-hidden="true">
+          <span className={styles.trackFill} style={{ transform: `scaleX(${step / QUESTIONS.length})` }} />
+        </div>
+      </header>
+
+      {/* key remount animates each question in cleanly */}
+      <div key={step} className={styles.stepIn}>
+        <h2 className={styles.prompt}>{question.prompt}</h2>
+        <div className={styles.answers}>
+          {question.answers.map((answer, i) => (
+            <button key={answer.label} type="button" className={styles.answerBtn} onClick={() => pick(answer.scent)}>
+              <span className={styles.answerKey}>{ANSWER_KEYS[i]}</span>
+              <span className={styles.answerLabel}>{answer.label}</span>
+              <span className={styles.answerArrow} aria-hidden="true">
+                →
+              </span>
+            </button>
+          ))}
+        </div>
       </div>
     </div>
   );

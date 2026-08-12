@@ -40,9 +40,6 @@ export default function ProductCard({ product }: { product: Product }) {
             </div>
           )}
         </div>
-        {/* real packaging tag artwork, keyed by product handle */}
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img className={styles.tag} src={`/brand/tag-${product.handle}.png`} alt={product.title} />
       </div>
 
       <div className={styles.meta}>
