@@ -34,7 +34,7 @@ export default function CartDrawer() {
 
   const handles = new Set(cart.lines.map((l) => l.handle));
   const hasBundle = handles.has('duo-bundle');
-  const hasBothScents = handles.has('happy-ending') && handles.has('burn-notice');
+  const hasBothScents = handles.has('bonfire-agarwood') && handles.has('burn-notice-palo-santo');
   const showBundleUpsell = duoBundle?.variantId && !hasBundle && !hasBothScents && cart.lines.length > 0;
 
   return (

@@ -7,7 +7,7 @@ import { shopifyFetch, mapProduct, type Product } from '@/lib/shopify';
 import { PRODUCTS_QUERY } from '@/lib/queries';
 import styles from './SmellTest.module.css';
 
-type ScentHandle = 'happy-ending' | 'burn-notice';
+type ScentHandle = 'bonfire-agarwood' | 'burn-notice-palo-santo';
 
 interface Question {
   prompt: string;
@@ -18,29 +18,29 @@ const QUESTIONS: Question[] = [
   {
     prompt: "It's 11PM. Pick your energy.",
     answers: [
-      { label: 'Soft landing, do not disturb', scent: 'happy-ending' },
-      { label: 'Main character, no notes', scent: 'burn-notice' },
+      { label: 'Soft landing, do not disturb', scent: 'bonfire-agarwood' },
+      { label: 'Main character, no notes', scent: 'burn-notice-palo-santo' },
     ],
   },
   {
     prompt: 'Your ideal room smells like',
     answers: [
-      { label: 'Something that hugs back', scent: 'happy-ending' },
-      { label: 'Something that dares you', scent: 'burn-notice' },
+      { label: 'Something that hugs back', scent: 'bonfire-agarwood' },
+      { label: 'Something that dares you', scent: 'burn-notice-palo-santo' },
     ],
   },
   {
     prompt: 'Pick a crime.',
     answers: [
-      { label: 'Ghosting the group chat to nap', scent: 'happy-ending' },
-      { label: 'Starting drama on purpose', scent: 'burn-notice' },
+      { label: 'Ghosting the group chat to nap', scent: 'bonfire-agarwood' },
+      { label: 'Starting drama on purpose', scent: 'burn-notice-palo-santo' },
     ],
   },
   {
     prompt: 'Last words before you light this incense.',
     answers: [
-      { label: 'Finally. Peace.', scent: 'happy-ending' },
-      { label: "Let's see what happens.", scent: 'burn-notice' },
+      { label: 'Finally. Peace.', scent: 'bonfire-agarwood' },
+      { label: "Let's see what happens.", scent: 'burn-notice-palo-santo' },
     ],
   },
 ];
@@ -48,7 +48,7 @@ const QUESTIONS: Question[] = [
 export default function SmellTest() {
   const [products, setProducts] = useState<Record<string, Product>>({});
   const [step, setStep] = useState(0);
-  const [tally, setTally] = useState<Record<ScentHandle, number>>({ 'happy-ending': 0, 'burn-notice': 0 });
+  const [tally, setTally] = useState<Record<ScentHandle, number>>({ 'bonfire-agarwood': 0, 'burn-notice-palo-santo': 0 });
   const [lastPick, setLastPick] = useState<ScentHandle | null>(null);
 
   useEffect(() => {
@@ -65,11 +65,11 @@ export default function SmellTest() {
 
   const isDone = step >= QUESTIONS.length;
   const winner: ScentHandle =
-    tally['burn-notice'] > tally['happy-ending']
-      ? 'burn-notice'
-      : tally['happy-ending'] > tally['burn-notice']
-        ? 'happy-ending'
-        : (lastPick ?? 'happy-ending');
+    tally['burn-notice-palo-santo'] > tally['bonfire-agarwood']
+      ? 'burn-notice-palo-santo'
+      : tally['bonfire-agarwood'] > tally['burn-notice-palo-santo']
+        ? 'bonfire-agarwood'
+        : (lastPick ?? 'bonfire-agarwood');
   const matched = products[winner];
 
   function pick(scent: ScentHandle) {
@@ -80,7 +80,7 @@ export default function SmellTest() {
 
   function restart() {
     setStep(0);
-    setTally({ 'happy-ending': 0, 'burn-notice': 0 });
+    setTally({ 'bonfire-agarwood': 0, 'burn-notice-palo-santo': 0 });
     setLastPick(null);
   }
 
