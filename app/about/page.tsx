@@ -47,7 +47,7 @@ export default function AboutPage() {
         <div className={styles.heroCopy}>
           <p className={styles.kicker}>About Mr. Sniff&rsquo;s</p>
           <h1 className={styles.headline}>
-            We Make Incense For People Who Actually Have A Nose.
+            We Make Incense For People Who Have A Nose.
           </h1>
           <p className={styles.intro}>
             Not the kind you light for a spa day — the kind that fills a room, starts a
