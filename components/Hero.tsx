@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import ParallaxHeadline from './ParallaxHeadline';
 import styles from './Hero.module.css';
 
 const META = [
@@ -11,11 +12,9 @@ const META = [
 export default function Hero() {
   return (
     <section className={styles.hero} aria-label="Mr. Sniff's — come get a whiff">
-      {/* Centered display headline — overlaps the seam onto the photo, ESPN-style */}
-      <h1 className={styles.headline}>
-        <span className={styles.line}>Come Get</span>
-        <span className={styles.line}>A Whiff</span>
-      </h1>
+      {/* Full-width single-line display headline — overlaps the seam onto the
+          photo and drifts on scroll */}
+      <ParallaxHeadline className={styles.headline}>Come Get A Whiff</ParallaxHeadline>
 
       <div className={styles.panel}>
         <p className={styles.lede}>
