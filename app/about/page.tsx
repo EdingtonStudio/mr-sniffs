@@ -28,8 +28,8 @@ const PILLARS = [
     body: 'Real fragrance loads on a hand-rolled stick. No shortcuts, no synthetic filler dressed up as "essential."',
   },
   {
-    title: "Names You'll Remember",
-    body: "Every scent has an actual point of view — starting with what it's called. Life's too short to burn something forgettable.",
+    title: 'Just Wood, No Nonsense',
+    body: "We burn wood — palo santo, agarwood — and that's it. No extra nonsense, nothing in the stick that doesn't belong there.",
   },
 ];
 

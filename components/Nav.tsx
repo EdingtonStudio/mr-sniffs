@@ -18,8 +18,26 @@ export default function Nav() {
           <Link href="/shop">Shop</Link>
           <Link href="/smell-test">Smell Test</Link>
           <Link href="/about" className={styles.about}>About</Link>
-          <button className={styles.cart} type="button" aria-label="Open cart" onClick={openCart}>
-            Cart <span className={styles.count}>({cart.totalQuantity})</span>
+          <button
+            className={styles.cart}
+            type="button"
+            aria-label={`Open cart (${cart.totalQuantity} ${cart.totalQuantity === 1 ? 'item' : 'items'})`}
+            onClick={openCart}
+          >
+            <svg
+              viewBox="0 0 24 24"
+              width="20"
+              height="20"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M4.5 7.5h15L18.3 20H5.7L4.5 7.5Z" />
+              <path d="M9 10V5.5a3 3 0 0 1 6 0V10" strokeLinecap="round" />
+            </svg>
+            {cart.totalQuantity > 0 ? <span className={styles.count}>{cart.totalQuantity}</span> : null}
           </button>
         </div>
       </div>

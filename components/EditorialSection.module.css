@@ -31,7 +31,7 @@
   font-family: var(--font-mono);
   font-size: var(--type-label);
   letter-spacing: var(--tracking-label);
-  color: var(--color-iron);
+  color: var(--color-tag-burn-notice);
 }
 .label {
   font-family: var(--font-headline);

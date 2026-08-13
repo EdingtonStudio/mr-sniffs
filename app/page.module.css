@@ -4,32 +4,7 @@
   padding-bottom: var(--space-section);
 }
 
-/* --- 02/ The Duo Bundle --- */
-.bundleInner {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: clamp(1.5rem, 4vw, 3rem);
-  flex-wrap: wrap;
-}
-.bundleCopy { max-width: 34rem; }
-.bundleTitle {
-  margin: 0 0 0.75rem;
-  font-family: var(--font-headline);
-  font-weight: var(--weight-display);
-  font-size: clamp(1.75rem, 4vw, 2.75rem);
-  line-height: 1;
-  text-transform: uppercase;
-  color: var(--color-white);
-}
-.bundleBody {
-  margin: 0;
-  font-family: var(--font-body);
-  color: var(--color-iron);
-}
-.bundleCta { flex-shrink: 0; }
-
-/* --- 03/ The Smell Test --- */
+/* --- 02/ The Smell Test --- */
 .smellTestInner {
   display: flex;
   align-items: baseline;
@@ -55,7 +30,7 @@
 }
 .smellTestCta:hover { color: var(--color-tag-burn-notice); }
 
-/* --- 04/ Newsletter --- */
+/* --- 03/ Newsletter --- */
 .newsletterInner {
   display: flex;
   align-items: center;
