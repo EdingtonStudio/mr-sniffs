@@ -1,53 +1,122 @@
+/* Full-viewport 50/50 editorial split — solid Midnight panel left, full-bleed
+   photo right. The display headline is centered across the whole section and
+   overlaps the seam onto the photo, ESPN-cover style. */
 .hero {
   position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   background: var(--color-midnight);
   color: var(--color-white);
-  overflow: hidden;
   min-height: calc(100vh - 58px); /* fill viewport below the sticky nav */
-  display: flex;
-  align-items: center;
-}
-.inner {
-  position: relative;
-  width: 100%;
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: clamp(2rem, 6vw, 5rem) clamp(1.25rem, 4vw, 3.5rem);
 }
 
-/* Oversized ghost numeral — "02" for two scents, bled off the top-right corner,
-   sitting just above the product photo. Editorial-poster signature mark. */
-.bigNumeral {
+/* --- Centered display headline, overlapping both halves --- */
+.headline {
   position: absolute;
   z-index: 3;
-  top: clamp(-2.5rem, -4vw, -1.5rem);
-  right: clamp(0.5rem, 3vw, 2.5rem);
+  left: 0;
+  right: 0;
+  top: 38%; /* sits high enough that the display size never crowds the CTAs below */
+  /* --parallax is set on scroll by ParallaxHeadline; 0 at the top of the page */
+  transform: translateY(calc(-50% + var(--parallax, 0px)));
+  margin: 0;
+  text-align: center;
+  white-space: nowrap;
   font-family: var(--font-headline);
   font-weight: var(--weight-display);
-  font-size: clamp(6rem, 16vw, 15rem);
-  line-height: 1;
-  letter-spacing: -0.02em;
+  font-size: clamp(3rem, 11.5vw, 13rem);
+  line-height: var(--leading-display);
+  letter-spacing: var(--tracking-display);
+  text-transform: uppercase;
+  /* Stroke-only treatment: hollow letters, no fill */
   color: transparent;
-  -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.55);
-  pointer-events: none;
-  user-select: none;
-}
-@supports not (-webkit-text-stroke: 1px black) {
-  .bigNumeral { color: rgba(255, 255, 255, 0.14); }
+  -webkit-text-stroke: 1px var(--color-white);
+  pointer-events: none; /* let clicks pass through to the panel/photo beneath */
+  will-change: transform;
+  animation: heroRise 900ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
 }
 
-/* Left column — headline, label, CTAs all share this left edge */
-.content {
+/* --- Left panel: lede top, CTAs + ticket meta bottom --- */
+.panel {
   position: relative;
   z-index: 2;
-  max-width: 66%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: clamp(1.5rem, 4vh, 2.75rem);
+  padding: clamp(1.5rem, 4vh, 2.75rem) clamp(1.25rem, 4vw, 3.5rem);
 }
 
-/* Ticket-style metadata row — small labeled stats, editorial-poster convention */
+.lede {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--type-body-sm);
+  line-height: var(--leading-body);
+  color: var(--color-iron);
+  max-width: 38ch;
+  padding-left: 3.25rem;
+  position: relative;
+}
+/* Leading dash rule — editorial paragraph marker */
+.lede::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.65em;
+  width: 2.25rem;
+  height: 1px;
+  background: var(--color-iron);
+}
+
+.foot {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.25rem, 3vh, 2rem);
+}
+
+.ctaRow {
+  display: flex;
+  align-items: center;
+  gap: clamp(1.25rem, 3vw, 2.5rem);
+  flex-wrap: wrap;
+}
+.orderBtn {
+  display: inline-block;
+  padding: 0.7em 1.4em;
+  font-family: var(--font-headline);
+  font-weight: var(--weight-headline);
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: var(--color-midnight);
+  background: var(--color-white);
+  transition: transform 150ms ease, background 150ms ease, color 150ms ease;
+}
+.orderBtn:hover {
+  transform: translateY(-2px);
+  background: var(--color-tag-burn-notice);
+  color: var(--color-white);
+}
+.smellTest {
+  font-family: var(--font-headline);
+  font-weight: var(--weight-headline);
+  font-size: 1.15rem;
+  line-height: 1;
+  text-transform: uppercase;
+  color: var(--color-white);
+  border-bottom: 2px solid var(--color-tag-burn-notice);
+  padding-bottom: 3px;
+  transition: color 150ms ease, border-color 150ms ease;
+}
+.smellTest:hover { color: var(--color-tag-burn-notice); }
+
+/* Ticket-style metadata row */
 .meta {
   display: flex;
   gap: clamp(1.5rem, 4vw, 3rem);
-  margin: 0 0 clamp(1.5rem, 4vw, 2.5rem);
+  margin: 0;
+  padding-top: clamp(1rem, 2.5vh, 1.5rem);
+  border-top: 1px solid var(--color-hairline);
 }
 .metaCol { margin: 0; }
 .metaLabel {
@@ -68,105 +137,46 @@
   color: var(--color-white);
 }
 
-.headline {
-  margin: 0;
-  font-family: var(--font-headline);
-  font-weight: var(--weight-display);
-  font-size: clamp(3.25rem, 10vw, 9rem);
-  line-height: 0.9;
-  letter-spacing: var(--tracking-display);
-  text-transform: uppercase;
-  white-space: nowrap; /* let the huge type bleed right, past the column */
-  animation: heroRise 900ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
-}
-.line { display: block; }
-.accentLine { color: var(--color-tag-burn-notice); }
-
-.ctaRow {
-  display: flex;
-  align-items: center;
-  gap: clamp(1.25rem, 3vw, 2.5rem);
-  flex-wrap: wrap;
-  margin-top: clamp(1.75rem, 4vw, 2.75rem);
-}
-.orderBtn {
-  display: inline-block;
-  padding: 0.7em 1.4em;
-  font-family: var(--font-headline);
-  font-weight: var(--weight-headline);
-  font-size: 1.4rem;
-  text-transform: uppercase;
-  letter-spacing: 0.02em;
-  color: var(--color-midnight);
-  background: var(--color-white);
-  transition: transform 150ms ease, background 150ms ease, color 150ms ease;
-}
-.orderBtn:hover {
-  transform: translateY(-2px);
-  background: var(--color-tag-burn-notice);
-  color: var(--color-white);
-}
-
-.smellTest {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
-  color: var(--color-white);
-}
-.mascot {
-  width: clamp(46px, 5vw, 60px);
-  height: auto;
-  transform: rotate(-4deg);
-  transform-origin: bottom center;
-  animation: mascotBob 4s ease-in-out infinite;
-}
-.smellTestLabel {
-  font-family: var(--font-headline);
-  font-weight: var(--weight-headline);
-  font-size: 1.2rem;
-  line-height: 1;
-  text-transform: uppercase;
-  border-bottom: 2px solid var(--color-accent);
-  padding-bottom: 3px;
-}
-
-/* Product photo — full-height band on the right, hard-edged against Midnight (no gradients) */
+/* --- Right panel: full-bleed photo --- */
 .photo {
-  position: absolute;
+  position: relative;
   z-index: 1;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  width: clamp(280px, 42%, 560px);
   overflow: hidden;
   border-left: 1px solid var(--color-hairline);
-  border-radius: var(--radius-media);
+  min-height: 100%;
 }
 .photoImg { object-fit: cover; object-position: center 62%; }
 
 @keyframes heroRise {
-  from { opacity: 0; transform: translateY(20px); }
-  to   { opacity: 1; transform: none; }
-}
-@keyframes mascotBob {
-  0%, 100% { transform: rotate(-4deg) translateY(0); }
-  50%      { transform: rotate(-1deg) translateY(-6px); }
+  from { opacity: 0; transform: translateY(calc(-50% + var(--parallax, 0px) + 20px)); }
+  to   { opacity: 1; transform: translateY(calc(-50% + var(--parallax, 0px))); }
 }
 @media (prefers-reduced-motion: reduce) {
-  .headline, .mascot { animation: none; }
+  .headline { animation: none; }
 }
 
 @media (max-width: 820px) {
-  .hero { min-height: auto; }
-  .content { max-width: 100%; }
-  .headline { white-space: normal; font-size: clamp(3rem, 14vw, 5rem); }
-  .bigNumeral { top: -1.25rem; right: 1rem; font-size: clamp(4.5rem, 22vw, 7rem); }
-  .meta { gap: 1.5rem; flex-wrap: wrap; }
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+  /* Headline joins the flow, still centered, above the panel content —
+     transform:none also opts mobile out of the parallax drift */
+  .headline {
+    position: static;
+    transform: none;
+    order: -1;
+    padding: clamp(2rem, 8vw, 3rem) 0.5rem 0;
+    font-size: 11.5vw;
+    animation: none;
+    pointer-events: auto;
+  }
+  .panel { gap: 2rem; }
+  .lede { padding-left: 0; }
+  .lede::before { display: none; }
   .photo {
-    position: relative;
-    top: auto; right: auto; bottom: auto;
-    width: auto;
-    height: 320px;
-    margin-top: 2rem;
+    border-left: none;
+    border-top: 1px solid var(--color-hairline);
+    min-height: 380px;
   }
 }

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import EditorialSection from '@/components/EditorialSection';
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
@@ -40,14 +41,18 @@ export default function FaqPage() {
         <p className={styles.kicker}>Before you burn one</p>
         <h1 className={styles.title}>Questions, Answered.</h1>
       </header>
-      <dl className={styles.list}>
-        {FAQS.map((item) => (
-          <div key={item.q} className={styles.item}>
-            <dt className={styles.q}>{item.q}</dt>
-            <dd className={styles.a}>{item.a}</dd>
-          </div>
+      <div className={styles.list}>
+        {FAQS.map((item, i) => (
+          <EditorialSection
+            key={item.q}
+            num={`${String(i + 1).padStart(2, '0')}/`}
+            label={item.q}
+            defaultOpen={i === 0}
+          >
+            <p className={styles.a}>{item.a}</p>
+          </EditorialSection>
         ))}
-      </dl>
+      </div>
     </section>
   );
 }

@@ -23,8 +23,9 @@
 
   /* --- FLAVOR TAG ACCENTS — LAUNCH (accent-only: borders/underlines/tags,
          never large-area backgrounds) --- */
-  --color-tag-happy-ending: #8FAD45; /* green — Tonka Bean + White Musk */
   --color-tag-burn-notice:  #E06666; /* coral — Sandalwood + Black Pepper */
+  --color-tag-bon-fire:     #9A6B3F; /* brown — Agarwood (replaced Happy Ending) */
+  --color-tag-happy-ending: #8FAD45; /* retired — kept for archived-scent references */
 
   /* Active flavor accent — PDP/card sets this per-scent; UI reads --color-accent.
      e.g. <article style="--color-accent: var(--color-tag-burn-notice)"> */

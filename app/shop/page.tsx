@@ -31,7 +31,9 @@ export default async function ShopPage() {
           Zero Chill.
         </h1>
       </header>
-      <ProductGrid products={products} />
+      <div className={styles.gridWrap}>
+        <ProductGrid products={products} />
+      </div>
     </section>
   );
 }

@@ -45,12 +45,28 @@
   margin: 0;
   font: inherit;
   cursor: pointer;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
   color: var(--color-white);
   opacity: 0.8;
   transition: opacity 120ms ease;
 }
 .cart:hover { opacity: 1; }
-.count { color: var(--color-iron); }
+.cart svg { display: block; }
+/* Item-count badge pinned to the icon's shoulder */
+.count {
+  position: absolute;
+  top: -0.45rem;
+  right: -0.65rem;
+  min-width: 1rem;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-weight: var(--weight-mono-bold);
+  font-size: 0.65rem;
+  line-height: 1;
+  color: var(--color-tag-burn-notice);
+}
 
 @media (max-width: 620px) {
   .links { gap: 0.9rem; font-size: 0.7rem; }

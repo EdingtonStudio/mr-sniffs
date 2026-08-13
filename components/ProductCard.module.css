@@ -34,25 +34,15 @@
 }
 .fallbackMark { width: 42%; height: auto; opacity: 0.4; }
 
-/* real packaging tag, slightly overlapping the image's bottom edge */
-.tag {
-  position: absolute;
-  z-index: 2;
-  top: 16px;
-  left: -16px; /* left edge falls off the image */
-  width: 49.5%; /* 50% bigger than the original 33% */
-  height: auto;
-  transition: transform 220ms ease;
-  pointer-events: none;
-}
-.card:hover .tag { transform: translateY(-3px); }
-
+/* Editorial caption block under the image — restrained, mono-annotated */
 .meta {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
   gap: 1rem;
-  margin-top: 1.1rem;
+  margin-top: 0.9rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--color-hairline);
 }
 .info {
   min-width: 0;
@@ -61,7 +51,7 @@
   margin: 0;
   font-family: var(--font-headline);
   font-weight: var(--weight-headline);
-  font-size: clamp(1.35rem, 2.4vw, 1.75rem);
+  font-size: clamp(1.15rem, 1.8vw, 1.4rem);
   line-height: 1.05;
   letter-spacing: var(--tracking-tight);
   text-transform: uppercase;

@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import ParallaxNumeral from './ParallaxNumeral';
+import ParallaxHeadline from './ParallaxHeadline';
 import styles from './Hero.module.css';
 
 const META = [
@@ -12,21 +12,26 @@ const META = [
 export default function Hero() {
   return (
     <section className={styles.hero} aria-label="Mr. Sniff's — come get a whiff">
-      <ParallaxNumeral value="02" className={styles.bigNumeral} />
+      {/* Full-width single-line display headline — overlaps the seam onto the
+          photo and drifts on scroll */}
+      <ParallaxHeadline className={styles.headline}>Come Get A Whiff</ParallaxHeadline>
 
-      <div className={styles.inner}>
-        <div className={styles.photo} data-parallax-target>
-          <Image
-            src="/photos/hero-burn-notice.jpg"
-            alt="Burn Notice incense, lit and smoking against a dark backdrop"
-            fill
-            priority
-            sizes="(max-width: 820px) 100vw, 42vw"
-            className={styles.photoImg}
-          />
-        </div>
+      <div className={styles.panel}>
+        <p className={styles.lede}>
+          Handcrafted incense for people who actually have a nose. Real fragrance loads,
+          names you&rsquo;ll remember, nothing you&rsquo;d hide in a drawer.
+        </p>
 
-        <div className={styles.content}>
+        <div className={styles.foot}>
+          <div className={styles.ctaRow}>
+            <Link href="/shop" className={styles.orderBtn}>
+              Order Now
+            </Link>
+            <Link href="/smell-test" className={styles.smellTest}>
+              Take the Smell Test
+            </Link>
+          </div>
+
           <dl className={styles.meta}>
             {META.map((item) => (
               <div key={item.label} className={styles.metaCol}>
@@ -35,28 +40,18 @@ export default function Hero() {
               </div>
             ))}
           </dl>
-
-          <h1 className={styles.headline}>
-            <span className={styles.line}>Come Get</span>
-            <span className={`${styles.line} ${styles.accentLine}`}>A Whiff</span>
-          </h1>
-
-          <div className={styles.ctaRow}>
-            <Link href="/shop" className={styles.orderBtn}>
-              Order Now
-            </Link>
-            <Link href="/smell-test" className={styles.smellTest}>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/brand/MrSniffs-Mascot-white.svg"
-                alt=""
-                aria-hidden="true"
-                className={styles.mascot}
-              />
-              <span className={styles.smellTestLabel}>Take the Smell Test</span>
-            </Link>
-          </div>
         </div>
+      </div>
+
+      <div className={styles.photo}>
+        <Image
+          src="/photos/hero-burn-notice.jpg"
+          alt="Burn Notice incense, lit and smoking against a dark backdrop"
+          fill
+          priority
+          sizes="(max-width: 820px) 100vw, 50vw"
+          className={styles.photoImg}
+        />
       </div>
     </section>
   );
