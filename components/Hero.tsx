@@ -14,7 +14,9 @@ export default function Hero() {
     <section className={styles.hero} aria-label="Mr. Sniff's — come get a whiff">
       {/* Full-width single-line display headline — overlaps the seam onto the
           photo and drifts on scroll */}
-      <ParallaxHeadline className={styles.headline}>Come Get A Whiff</ParallaxHeadline>
+      <ParallaxHeadline className={styles.headline}>
+        <span className={styles.seg}>Come Get</span> <span className={styles.seg}>A Whiff</span>
+      </ParallaxHeadline>
 
       <div className={styles.panel}>
         <p className={styles.lede}>
