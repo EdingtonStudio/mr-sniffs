@@ -5,7 +5,7 @@ import { PRODUCTS_QUERY } from '@/lib/queries';
 import styles from './shop.module.css';
 
 export const metadata: Metadata = {
-  title: "Shop — Mr. Sniff's",
+  title: "Shop · Mr. Sniff's",
   description: "Every Mr. Sniff's scent. Two of them. Zero chill.",
 };
 

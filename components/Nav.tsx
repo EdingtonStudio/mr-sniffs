@@ -18,7 +18,7 @@ export default function Nav() {
   return (
     <nav className={styles.nav}>
       <div className={styles.inner}>
-        <Link href="/" className={styles.logo} aria-label="Mr. Sniff's — home">
+        <Link href="/" className={styles.logo} aria-label="Mr. Sniff's home">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/brand/MrSniffs-Logo-white.svg" alt="Mr. Sniff's" />
         </Link>

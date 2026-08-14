@@ -11,7 +11,7 @@ const META = [
 
 export default function Hero() {
   return (
-    <section className={styles.hero} aria-label="Mr. Sniff's — come get a whiff">
+    <section className={styles.hero} aria-label="Mr. Sniff's: come get a whiff">
       {/* Full-width single-line display headline — overlaps the seam onto the
           photo and drifts on scroll */}
       <ParallaxHeadline className={styles.headline}>

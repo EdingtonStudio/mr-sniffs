@@ -3,14 +3,14 @@ import EditorialSection from '@/components/EditorialSection';
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
-  title: "FAQ — Mr. Sniff's",
+  title: "FAQ · Mr. Sniff's",
   description: "Everything you need to know before you light one up.",
 };
 
 const FAQS = [
   {
     q: 'What are these actually made of?',
-    a: 'Real fragrance loads on a hand-rolled stick — no shortcuts, no synthetic filler dressed up as "essential." Each scent is built from a note pairing, not a mystery blend.',
+    a: 'Real fragrance loads on a hand-rolled stick. No shortcuts, no synthetic filler dressed up as "essential." Each scent is built from a note pairing, not a mystery blend.',
   },
   {
     q: 'How long does one stick burn?',
@@ -18,7 +18,7 @@ const FAQS = [
   },
   {
     q: 'I can only pick one. Which scent do I get?',
-    a: 'Take the Smell Test — four questions, no accounts, no email gate. Or just get both with the Duo Bundle and stop torturing yourself.',
+    a: 'Take the Smell Test: four questions, no accounts, no email gate. Or just get both with the Duo Bundle and stop torturing yourself.',
   },
   {
     q: 'Is it safe to burn indoors?',
@@ -30,7 +30,7 @@ const FAQS = [
   },
   {
     q: 'Can I return it if it’s not for me?',
-    a: 'See our Shipping & Returns policy in the footer for the full breakdown — we’re not going to bury it in fine print here.',
+    a: 'See our Shipping & Returns policy in the footer for the full breakdown. We’re not going to bury it in fine print here.',
   },
 ];
 

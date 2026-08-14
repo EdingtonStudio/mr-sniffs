@@ -42,9 +42,9 @@ export async function generateMetadata({
   params: { handle: string };
 }): Promise<Metadata> {
   const product = await getProduct(params.handle);
-  if (!product) return { title: "Not found — Mr. Sniff's" };
+  if (!product) return { title: "Not found · Mr. Sniff's" };
   return {
-    title: `${product.title} — Mr. Sniff's`,
+    title: `${product.title} · Mr. Sniff's`,
     description: product.description || `${product.title}, handcrafted incense from Mr. Sniff's.`,
   };
 }

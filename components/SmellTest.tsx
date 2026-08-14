@@ -120,7 +120,7 @@ export default function SmellTest() {
         <p className={styles.progress}>
           <span className={styles.progressLabel}>The Smell Test</span>
           <span className={styles.progressCount}>
-            Q{step + 1} — {QUESTIONS.length}
+            Q{step + 1} / {QUESTIONS.length}
           </span>
         </p>
         <div className={styles.track} aria-hidden="true">

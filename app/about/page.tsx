@@ -3,7 +3,7 @@ import Link from 'next/link';
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
-  title: "About — Mr. Sniff's",
+  title: "About · Mr. Sniff's",
   description: 'Bold, handcrafted incense for people who actually have a nose.',
 };
 
@@ -21,7 +21,7 @@ function PhotoPlaceholder({ label, ratio }: { label: string; ratio?: 'wide' | 't
 const PILLARS = [
   {
     title: 'Bold, Not Precious',
-    body: "Great fragrance should be bold, irreverent, and worth talking about — not something you hide in a drawer or save for a spa day.",
+    body: "Great fragrance should be bold, irreverent, and worth talking about, not something you hide in a drawer or save for a spa day.",
   },
   {
     title: 'Handcrafted, For Real',
@@ -29,12 +29,12 @@ const PILLARS = [
   },
   {
     title: 'Just Wood, No Nonsense',
-    body: "We burn wood — palo santo, agarwood — and that's it. No extra nonsense, nothing in the stick that doesn't belong there.",
+    body: "We burn wood: palo santo, agarwood. That's it. No extra nonsense, nothing in the stick that doesn't belong there.",
   },
 ];
 
 const PROCESS = [
-  { num: '01', title: 'Built From A Note Pairing', body: 'Each scent starts as a deliberate pairing of notes — not a mystery blend.' },
+  { num: '01', title: 'Built From A Note Pairing', body: 'Each scent starts as a deliberate pairing of notes, not a mystery blend.' },
   { num: '02', title: 'Hand-Rolled Sticks', body: 'Rolled by hand with a real fragrance load, so the room actually notices.' },
   { num: '03', title: '~50 Minutes A Burn', body: 'Long enough to matter, short enough that you won’t forget it’s lit.' },
 ];
@@ -50,11 +50,11 @@ export default function AboutPage() {
             We Make Incense For People Who Have A Nose.
           </h1>
           <p className={styles.intro}>
-            Not the kind you light for a spa day — the kind that fills a room, starts a
+            Not the kind you light for a spa day. The kind that fills a room, starts a
             conversation, and makes your weird neighbor ask what you&rsquo;re burning.
           </p>
         </div>
-        <PhotoPlaceholder label="Photo — Founder / Studio Portrait" ratio="tall" />
+        <PhotoPlaceholder label="Photo: Founder / Studio Portrait" ratio="tall" />
       </header>
 
       {/* --- 01 / What we're about — three-column breakdown --- */}
@@ -84,7 +84,7 @@ export default function AboutPage() {
             <p className={styles.blockLabel}>Mission</p>
             <p className={styles.blockBody}>
               We&rsquo;re here to prove that incense doesn&rsquo;t have to be precious. Great
-              fragrance should be bold, irreverent, and worth talking about — not something
+              fragrance should be bold, irreverent, and worth talking about, not something
               you hide in a drawer.
             </p>
           </div>
@@ -96,7 +96,7 @@ export default function AboutPage() {
               view.
             </p>
           </div>
-          <PhotoPlaceholder label="Photo — Product In Situ" ratio="square" />
+          <PhotoPlaceholder label="Photo: Product In Situ" ratio="square" />
         </div>
       </section>
 
@@ -107,7 +107,7 @@ export default function AboutPage() {
           <h2 className={styles.sectionTitle}>How It&rsquo;s Made</h2>
         </header>
         <div className={styles.process}>
-          <PhotoPlaceholder label="Photo — Hands Rolling Incense" ratio="wide" />
+          <PhotoPlaceholder label="Photo: Hands Rolling Incense" ratio="wide" />
           <ol className={styles.steps}>
             {PROCESS.map((step) => (
               <li key={step.num} className={styles.step}>
