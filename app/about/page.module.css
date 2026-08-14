@@ -41,7 +41,7 @@
 
 /* --- Numbered section pattern (static variant of the editorial rows) --- */
 .section {
-  border-top: 1px solid var(--color-hairline);
+  border-top: 2px solid var(--color-hairline); /* section separators read heavier than internal hairlines */
   padding: clamp(1.5rem, 3.5vw, 2.5rem) 0 clamp(2.5rem, 5vw, 4rem);
 }
 .sectionHead {
