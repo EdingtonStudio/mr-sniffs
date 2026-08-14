@@ -102,7 +102,7 @@ export default function CartDrawer() {
             {showBundleUpsell ? (
               <div className={styles.upsell}>
                 <p className={styles.upsellCopy}>
-                  Not sure? The Duo Bundle gets you both scents — stop overthinking it.
+                  Not sure? The Duo Bundle gets you both scents. Stop overthinking it.
                 </p>
                 <button
                   type="button"

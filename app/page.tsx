@@ -41,8 +41,8 @@ export default async function HomePage() {
         <EditorialSection num="02/" label="The Smell Test" note="4 Questions">
           <div className={styles.smellTestInner}>
             <p className={styles.smellTestCopy}>
-              Still not sure which one&rsquo;s yours? Four questions, no accounts, no email gate —
-              one winner for your nose.
+              Still not sure which one&rsquo;s yours? Four questions, no accounts, no email gate.
+              One winner for your nose.
             </p>
             <Link href="/smell-test" className={styles.smellTestCta}>
               Take The Smell Test →

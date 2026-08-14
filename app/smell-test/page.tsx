@@ -3,7 +3,7 @@ import SmellTest from '@/components/SmellTest';
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
-  title: "Smell Test — Mr. Sniff's",
+  title: "Smell Test · Mr. Sniff's",
   description: 'Four questions. One winner for your nose. Take the Mr. Sniff\'s Smell Test.',
 };
 
