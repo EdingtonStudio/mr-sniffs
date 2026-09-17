@@ -47,8 +47,8 @@ export default function Hero() {
 
       <div className={styles.photo}>
         <Image
-          src="/photos/hero-burn-notice.jpg"
-          alt="Burn Notice incense, lit and smoking against a dark backdrop"
+          src="/photos/hero-brass-monkey.jpg"
+          alt="Stachin' Ash brass incense holder with a lit stick smoldering against a dark backdrop"
           fill
           priority
           sizes="(max-width: 820px) 100vw, 50vw"
