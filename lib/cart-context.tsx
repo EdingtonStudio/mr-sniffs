@@ -13,6 +13,7 @@ import {
   type ReactNode,
 } from 'react';
 import { shopifyFetch, mapProduct, type Product } from './shopify';
+import { PRODUCT_COLORS, PRODUCT_PHOTOS } from './product-assets';
 import {
   CART_QUERY,
   CART_CREATE_MUTATION,
@@ -65,8 +66,8 @@ function normalizeCart(raw: any): CartState {
       title: n.merchandise?.product?.title ?? n.merchandise?.title ?? '',
       handle: n.merchandise?.product?.handle ?? null,
       price: n.merchandise?.price ?? { amount: '0', currencyCode: 'USD' },
-      image: n.merchandise?.image ?? null,
-      flavorColor: n.merchandise?.product?.flavorColor?.value ?? null,
+      image: PRODUCT_PHOTOS[n.merchandise?.product?.handle]?.[0] ?? n.merchandise?.image ?? null,
+      flavorColor: PRODUCT_COLORS[n.merchandise?.product?.handle] ?? n.merchandise?.product?.flavorColor?.value ?? null,
     })),
   };
 }

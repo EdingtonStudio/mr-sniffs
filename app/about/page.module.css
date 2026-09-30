@@ -19,7 +19,7 @@
   font-size: 0.8rem;
   letter-spacing: var(--tracking-label);
   text-transform: uppercase;
-  color: var(--color-tag-yoga-studio);
+  color: var(--color-highlight);
 }
 .headline {
   margin: 0 0 1.25rem;
@@ -54,7 +54,7 @@
   font-family: var(--font-mono);
   font-size: var(--type-label);
   letter-spacing: var(--tracking-label);
-  color: var(--color-tag-yoga-studio);
+  color: var(--color-highlight);
 }
 .sectionTitle {
   margin: 0;
@@ -172,7 +172,7 @@
   font-family: var(--font-mono);
   font-size: var(--type-label);
   letter-spacing: var(--tracking-label);
-  color: var(--color-tag-yoga-studio);
+  color: var(--color-highlight);
   padding-top: 0.25em;
 }
 .stepTitle {
@@ -230,7 +230,7 @@
 }
 .closerBtn:hover {
   transform: translateY(-2px);
-  background: var(--color-tag-yoga-studio);
+  background: var(--color-highlight);
   color: var(--color-white);
 }
 .closerLink {
@@ -239,11 +239,11 @@
   font-size: 1.1rem;
   text-transform: uppercase;
   color: var(--color-white);
-  border-bottom: 2px solid var(--color-tag-yoga-studio);
+  border-bottom: 2px solid var(--color-highlight);
   padding-bottom: 3px;
   transition: color 150ms ease;
 }
-.closerLink:hover { color: var(--color-tag-yoga-studio); }
+.closerLink:hover { color: var(--color-highlight); }
 
 @media (max-width: 900px) {
   .hero { grid-template-columns: 1fr; align-items: start; }

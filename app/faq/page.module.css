@@ -11,7 +11,7 @@
   font-size: 0.8rem;
   letter-spacing: var(--tracking-label);
   text-transform: uppercase;
-  color: var(--color-tag-yoga-studio);
+  color: var(--color-highlight);
 }
 .title {
   margin: 0;

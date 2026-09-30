@@ -8,7 +8,7 @@
 // The public token is sent as the X-Shopify-Storefront-Access-Token header and
 // is safe to expose client-side — that's why it's a NEXT_PUBLIC_ var.
 
-import { PRODUCT_PHOTOS } from './product-photos';
+import { PRODUCT_COLORS, PRODUCT_PHOTOS } from './product-assets';
 
 const SHOPIFY_STORE_DOMAIN = process.env.NEXT_PUBLIC_SHOPIFY_STORE_DOMAIN;
 const SHOPIFY_STOREFRONT_TOKEN = process.env.NEXT_PUBLIC_SHOPIFY_STOREFRONT_TOKEN;
@@ -168,7 +168,7 @@ export function mapProduct(node: any): Product {
       notePairing: node?.notePairing?.value ?? null,
       moodTags,
       burnTime: node?.burnTime?.value ?? null,
-      flavorColor: node?.flavorColor?.value ?? null,
+      flavorColor: PRODUCT_COLORS[node.handle] ?? node?.flavorColor?.value ?? null,
     },
   };
 }

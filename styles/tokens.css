@@ -23,9 +23,12 @@
 
   /* --- FLAVOR TAG ACCENTS — LAUNCH (accent-only: borders/underlines/tags,
          never large-area backgrounds) --- */
-  --color-tag-yoga-studio:  #E06666; /* coral — Sandalwood + Black Pepper */
-  --color-tag-bon-fire:     #9A6B3F; /* brown — Agarwood (replaced Happy Ending) */
+  --color-tag-yoga-studio:  #A6D7DC; /* pale aqua — Palo Santo, matches the box label */
+  --color-tag-bonfire:      #EB3618; /* red-orange — Agarwood, matches the box label */
   --color-tag-happy-ending: #8FAD45; /* retired — kept for archived-scent references */
+
+  /* Site-wide signal: links, CTAs, kickers, hover states. Not tied to a scent. */
+  --color-highlight:        #E06666; /* coral */
 
   /* Active flavor accent — PDP/card sets this per-scent; UI reads --color-accent.
      e.g. <article style="--color-accent: var(--color-tag-yoga-studio)"> */

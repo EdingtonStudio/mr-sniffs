@@ -94,7 +94,7 @@
 }
 .orderBtn:hover {
   transform: translateY(-2px);
-  background: var(--color-tag-yoga-studio);
+  background: var(--color-highlight);
   color: var(--color-white);
 }
 .smellTest {
@@ -104,11 +104,11 @@
   line-height: 1;
   text-transform: uppercase;
   color: var(--color-white);
-  border-bottom: 2px solid var(--color-tag-yoga-studio);
+  border-bottom: 2px solid var(--color-highlight);
   padding-bottom: 3px;
   transition: color 150ms ease, border-color 150ms ease;
 }
-.smellTest:hover { color: var(--color-tag-yoga-studio); }
+.smellTest:hover { color: var(--color-highlight); }
 
 /* Ticket-style metadata row */
 .meta {
