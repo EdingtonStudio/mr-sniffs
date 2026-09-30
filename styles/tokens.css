@@ -23,18 +23,18 @@
 
   /* --- FLAVOR TAG ACCENTS — LAUNCH (accent-only: borders/underlines/tags,
          never large-area backgrounds) --- */
-  --color-tag-burn-notice:  #E06666; /* coral — Sandalwood + Black Pepper */
+  --color-tag-yoga-studio:  #E06666; /* coral — Sandalwood + Black Pepper */
   --color-tag-bon-fire:     #9A6B3F; /* brown — Agarwood (replaced Happy Ending) */
   --color-tag-happy-ending: #8FAD45; /* retired — kept for archived-scent references */
 
   /* Active flavor accent — PDP/card sets this per-scent; UI reads --color-accent.
-     e.g. <article style="--color-accent: var(--color-tag-burn-notice)"> */
+     e.g. <article style="--color-accent: var(--color-tag-yoga-studio)"> */
   --color-accent: var(--color-iron);
 
   /* Full scent line — phase 2 (brand-guide values, not shipping at launch):
      morning-driftwood #6FBEBD · that-what-she-said #D23E88 · pot-pourri #B8CC5F
      inhale-to-the-chief #8FAD45 · seaman #8A2540 · golden-shower #D9C73B
-     (Happy Ending adopted the olive #8FAD45 for launch contrast vs Burn Notice.) */
+     (Happy Ending adopted the olive #8FAD45 for launch contrast vs Yoga Studio.) */
 
   /* --- TYPE WEIGHTS --- */
   --weight-display:         800; /* hero/display headlines */

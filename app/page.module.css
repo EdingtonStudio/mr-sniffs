@@ -24,11 +24,11 @@
   font-size: 1.15rem;
   text-transform: uppercase;
   color: var(--color-white);
-  border-bottom: 2px solid var(--color-tag-burn-notice);
+  border-bottom: 2px solid var(--color-tag-yoga-studio);
   padding-bottom: 3px;
   transition: color 150ms ease;
 }
-.smellTestCta:hover { color: var(--color-tag-burn-notice); }
+.smellTestCta:hover { color: var(--color-tag-yoga-studio); }
 
 /* --- 03/ Newsletter --- */
 .newsletterInner {

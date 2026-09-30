@@ -10,7 +10,7 @@ import styles from './page.module.css';
 export const revalidate = 60;
 
 // Merchandising order for the lineup; anything new lands after these.
-const LINEUP_ORDER = ['burn-notice-palo-santo', 'bonfire-agarwood', 'duo-bundle'];
+const LINEUP_ORDER = ['yoga-studio-palo-santo', 'bonfire-agarwood', 'duo-bundle'];
 
 export default async function HomePage() {
   const productsData = await shopifyFetch<{ products: { nodes: unknown[] } }>({

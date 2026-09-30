@@ -223,4 +223,4 @@
   background: var(--color-white);
   transition: background 150ms ease;
 }
-.checkout:hover { background: var(--color-tag-burn-notice); color: var(--color-white); }
+.checkout:hover { background: var(--color-tag-yoga-studio); color: var(--color-white); }

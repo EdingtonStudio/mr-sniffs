@@ -10,7 +10,7 @@
   font-size: 0.8rem;
   letter-spacing: var(--tracking-label);
   text-transform: uppercase;
-  color: var(--color-tag-burn-notice);
+  color: var(--color-tag-yoga-studio);
 }
 .title {
   margin: 0 0 1.25rem;
@@ -34,7 +34,7 @@
   font-size: 1.75rem;
   text-transform: uppercase;
   color: var(--color-white);
-  border-bottom: 2px solid var(--color-tag-burn-notice);
+  border-bottom: 2px solid var(--color-tag-yoga-studio);
   padding-bottom: 4px;
 }
 .note {

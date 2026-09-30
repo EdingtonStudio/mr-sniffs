@@ -9,15 +9,15 @@
 const IMG = (url: string) => ({ url, altText: null, width: 1200, height: 1200 });
 
 const MOCK_PRODUCTS: Record<string, unknown> = {
-  'burn-notice-palo-santo': {
+  'yoga-studio-palo-santo': {
     id: 'gid://mock/Product/1',
-    handle: 'burn-notice-palo-santo',
-    title: 'Burn Notice · Palo Santo Incense',
+    handle: 'yoga-studio-palo-santo',
+    title: 'Yoga Studio · Palo Santo Incense',
     description:
       'Placeholder fixture description for local development. Real copy comes from Shopify.',
     priceRange: { minVariantPrice: { amount: '18.0', currencyCode: 'USD' } },
-    featuredImage: IMG('/photos/card-burn-notice.jpg'),
-    images: { nodes: [IMG('/photos/card-burn-notice.jpg'), IMG('/photos/hero-burn-notice.jpg')] },
+    featuredImage: IMG('/photos/yoga-studio-1.jpg'),
+    images: { nodes: [IMG('/photos/yoga-studio-1.jpg')] },
     variants: { nodes: [{ id: 'gid://mock/ProductVariant/1', availableForSale: true }] },
     notePairing: { value: 'Sandalwood + Black Pepper' },
     moodTags: { value: '["Bold","Loud"]' },
@@ -31,8 +31,8 @@ const MOCK_PRODUCTS: Record<string, unknown> = {
     description:
       'Placeholder fixture description for local development. Real copy comes from Shopify.',
     priceRange: { minVariantPrice: { amount: '18.0', currencyCode: 'USD' } },
-    featuredImage: IMG('/photos/card-happy-ending.jpg'),
-    images: { nodes: [IMG('/photos/card-happy-ending.jpg')] },
+    featuredImage: IMG('/photos/bon-fire-1.jpg'),
+    images: { nodes: [IMG('/photos/bon-fire-1.jpg')] },
     variants: { nodes: [{ id: 'gid://mock/ProductVariant/2', availableForSale: true }] },
     notePairing: { value: 'Agarwood' },
     moodTags: { value: '["Warm","Slow"]' },
@@ -46,8 +46,8 @@ const MOCK_PRODUCTS: Record<string, unknown> = {
     description:
       'Placeholder fixture description for local development. Real copy comes from Shopify.',
     priceRange: { minVariantPrice: { amount: '32.0', currencyCode: 'USD' } },
-    featuredImage: IMG('/photos/card-burn-notice.jpg'),
-    images: { nodes: [IMG('/photos/card-burn-notice.jpg')] },
+    featuredImage: IMG('/photos/duo-1.jpg'),
+    images: { nodes: [IMG('/photos/duo-1.jpg')] },
     variants: { nodes: [{ id: 'gid://mock/ProductVariant/3', availableForSale: true }] },
     notePairing: { value: null },
     moodTags: { value: null },
