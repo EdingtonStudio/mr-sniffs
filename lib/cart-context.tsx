@@ -13,7 +13,7 @@ import {
   type ReactNode,
 } from 'react';
 import { shopifyFetch, mapProduct, type Product } from './shopify';
-import { PRODUCT_COLORS, PRODUCT_PHOTOS } from './product-assets';
+import { PRODUCT_COLORS, PRODUCT_PHOTOS, PRODUCT_TITLES, canonicalHandle } from './product-assets';
 import {
   CART_QUERY,
   CART_CREATE_MUTATION,
@@ -59,16 +59,20 @@ function normalizeCart(raw: any): CartState {
     checkoutUrl: raw.checkoutUrl,
     totalQuantity: raw.totalQuantity ?? 0,
     subtotal: raw.cost?.subtotalAmount ?? null,
-    lines: (raw.lines?.nodes ?? []).map((n: any) => ({
-      id: n.id,
-      quantity: n.quantity,
-      merchandiseId: n.merchandise?.id,
-      title: n.merchandise?.product?.title ?? n.merchandise?.title ?? '',
-      handle: n.merchandise?.product?.handle ?? null,
-      price: n.merchandise?.price ?? { amount: '0', currencyCode: 'USD' },
-      image: PRODUCT_PHOTOS[n.merchandise?.product?.handle]?.[0] ?? n.merchandise?.image ?? null,
-      flavorColor: PRODUCT_COLORS[n.merchandise?.product?.handle] ?? n.merchandise?.product?.flavorColor?.value ?? null,
-    })),
+    lines: (raw.lines?.nodes ?? []).map((n: any) => {
+      const rawHandle = n.merchandise?.product?.handle;
+      const handle = rawHandle ? canonicalHandle(rawHandle) : null;
+      return {
+        id: n.id,
+        quantity: n.quantity,
+        merchandiseId: n.merchandise?.id,
+        title: (handle && PRODUCT_TITLES[handle]) ?? n.merchandise?.product?.title ?? n.merchandise?.title ?? '',
+        handle,
+        price: n.merchandise?.price ?? { amount: '0', currencyCode: 'USD' },
+        image: (handle && PRODUCT_PHOTOS[handle]?.[0]) ?? n.merchandise?.image ?? null,
+        flavorColor: (handle && PRODUCT_COLORS[handle]) ?? n.merchandise?.product?.flavorColor?.value ?? null,
+      };
+    }),
   };
 }
 /* eslint-enable @typescript-eslint/no-explicit-any */

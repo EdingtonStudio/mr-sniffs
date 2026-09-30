@@ -5,16 +5,21 @@ import { notFound } from 'next/navigation';
 import PDPScentProfile from '@/components/PDPScentProfile';
 import { shopifyFetch, mapProduct, type Product } from '@/lib/shopify';
 import { PRODUCT_BY_HANDLE_QUERY, PRODUCTS_QUERY } from '@/lib/queries';
+import { shopifyHandlesFor } from '@/lib/product-assets';
 import styles from './page.module.css';
 
 export const revalidate = 60;
 
 async function getProduct(handle: string): Promise<Product | null> {
-  const data = await shopifyFetch<{ product: unknown }>({
-    query: PRODUCT_BY_HANDLE_QUERY,
-    variables: { handle },
-  });
-  return data.product ? mapProduct(data.product) : null;
+  // Renamed products may still carry their old handle in Shopify.
+  for (const candidate of shopifyHandlesFor(handle)) {
+    const data = await shopifyFetch<{ product: unknown }>({
+      query: PRODUCT_BY_HANDLE_QUERY,
+      variables: { handle: candidate },
+    });
+    if (data.product) return mapProduct(data.product);
+  }
+  return null;
 }
 
 async function getOtherScent(handle: string): Promise<Product | null> {

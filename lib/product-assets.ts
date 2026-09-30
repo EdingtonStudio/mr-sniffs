@@ -29,3 +29,25 @@ export const PRODUCT_COLORS: Record<string, string> = {
   'yoga-studio-palo-santo': '#A6D7DC',
   'bonfire-agarwood': '#EB3618',
 };
+
+/** Storefront title per handle, so names match the packaging whatever Shopify says. */
+export const PRODUCT_TITLES: Record<string, string> = {
+  'yoga-studio-palo-santo': 'Yoga Studio · Palo Santo Incense',
+  'bonfire-agarwood': 'Bonfire · Agarwood Incense',
+};
+
+/** Old Shopify handles still resolving to a renamed product. Inert once Shopify uses the new handle. */
+const LEGACY_HANDLES: Record<string, string> = {
+  'burn-notice-palo-santo': 'yoga-studio-palo-santo',
+};
+
+/** The handle the site uses for a product, whichever handle Shopify returned. */
+export function canonicalHandle(handle: string): string {
+  return LEGACY_HANDLES[handle] ?? handle;
+}
+
+/** Every Shopify handle to try when looking up a site handle: itself first, then legacy ones. */
+export function shopifyHandlesFor(handle: string): string[] {
+  const legacy = Object.keys(LEGACY_HANDLES).filter((old) => LEGACY_HANDLES[old] === handle);
+  return [handle, ...legacy];
+}

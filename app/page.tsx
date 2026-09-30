@@ -9,8 +9,9 @@ import styles from './page.module.css';
 
 export const revalidate = 60;
 
-// Merchandising order for the lineup; anything new lands after these.
-const LINEUP_ORDER = ['yoga-studio-palo-santo', 'bonfire-agarwood', 'duo-bundle'];
+// Merchandising order for the lineup: scents side by side, anything new after
+// them, and the Duo Bundle always last.
+const LINEUP_ORDER = ['yoga-studio-palo-santo', 'bonfire-agarwood'];
 
 export default async function HomePage() {
   const productsData = await shopifyFetch<{ products: { nodes: unknown[] } }>({
@@ -19,6 +20,7 @@ export default async function HomePage() {
   });
 
   const rank = (p: Product) => {
+    if (p.handle === 'duo-bundle') return LINEUP_ORDER.length + 1;
     const i = LINEUP_ORDER.indexOf(p.handle);
     return i === -1 ? LINEUP_ORDER.length : i;
   };
